@@ -4,33 +4,92 @@
      --primario: #FFC107;
      --secundario: #105f7e;
      --gris: #757575;
-
+     --grisclaro: #DFE9F3
  }
+
+ /*Globales*/
 
  html {
      font-size: 62.5%;
+     box-sizing: border-box;
+ }
+
+
+ *,
+ *:before,
+ *:after {
+     box-sizing: inherit;
  }
 
  body {
      font-family: "Montserrat", sans-serif;
-     font-size: 16px
-         /* 1rem = 10px*/
- }
-
- .titulo {
-     text-align: center;
-     font-size: 3.8rem;
-     font-family: "Montserrat", sans-serif;
- }
-
- .titulo span {
-     font-size: 2rem;
+     /* Hack para Box Mode */
+     font-size: 16px;
+     /* 10rem = 1px*/
+     background-image: linear-gradient(to top, var(--grisclaro) 0%, var(--blanco) 100%);
+     /* Degradado de abajo a arriba*/
  }
 
  .contenedor {
      max-width: 120rem;
      margin: 0 auto;
  }
+
+ .boton {
+     background-color: var(--secundario);
+     color: var(--blanco);
+     padding: 1rem 3rem;
+     margin-top: 1rem;
+     font-size: 2rem;
+     text-decoration: none;
+     text-transform: uppercase;
+     font-weight: bold;
+     border-radius: .5rem;
+     width: 90%;
+     text-align: center
+ }
+
+ @media (min-width:768px) {
+     .boton {
+         width: auto;
+     }
+ }
+
+ .sombra {
+     box-shadow: 1px 6px 16px 0px rgba(117, 117, 117, 0.41);
+     background-color: var(--blanco);
+     padding: 2rem;
+     border-radius: 1rem;
+
+ }
+
+ /*Tipografias*/
+
+ h1 {
+     font-size: 4.8rem;
+ }
+
+ h2 {
+     font-size: 3.8rem;
+ }
+
+ h3 {
+     font-size: 2.8rem;
+ }
+
+ h1,
+ h2,
+ h3 {
+     text-align: center;
+ }
+
+ /*Titulos*/
+
+ .titulo span {
+     font-size: 2rem;
+ }
+
+ /*Navegacion Principal*/
 
  .nav-bg {
      background-color: var(--secundario);
@@ -63,4 +122,43 @@
  .nav-principal a:hover {
      background-color: var(--primario);
      color: var(--oscuro);
+ }
+
+ /*Hero*/
+
+ .hero {
+     background-image: url(../img/hero.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 450px;
+     position: relative;
+     margin-bottom: 2rem;
+ }
+
+ .contenido-hero {
+     position: absolute;
+     background-color: rgba(0, 0, 0, .7);
+     /*Color Degradado*/
+     height: 100%;
+     width: 100%;
+     /**alinear horizontalmente y verticalmente **/
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .contenido-hero h2,
+ .contenido-hero {
+     color: var(--blanco)
+ }
+
+ .ubicacion {
+     display: flex;
+     align-items: flex-end;
+ }
+
+ /* Servicios*/
+ .servicios {
+     display: grid;
  }
